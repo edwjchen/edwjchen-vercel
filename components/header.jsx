@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Header = (props) => {
     return (
-        <div className='lg:fixed h-screen basis-1.5/4 flex flex-col justify-between pb-48 self-center lg:self-auto'>
+        <div className='lg:fixed h-screen basis-1.5/4 flex flex-col pb-48 self-center lg:self-auto'>
             <div className=''>
                 <h1 className='text-5xl subpixel-antialiased tracking-wide'>{props.data.name}</h1>
                 <h2 className='text-primary-500 pt-2 text-base font-normal tracking-wider'>{props.data.headline}</h2>
