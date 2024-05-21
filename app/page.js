@@ -20,7 +20,7 @@ export default async function Home() {
                 <div className="lg:pl-[50%]">
                     <About data={data.general}></About>
                     <Publications data={data.publications}></Publications>
-                    {/* <Blog data={data.blog}></Blog> */}
+                    <Blog data={data.blog}></Blog>
                     <Credits data={data.general}></Credits>
                 </div>
             </div>
