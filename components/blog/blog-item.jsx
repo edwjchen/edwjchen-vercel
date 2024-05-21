@@ -12,7 +12,7 @@ function BlogItem(props) {
                 <div className='mb-2 text-primary-400'>{props.date}</div>
                 <div className='text-surface-600 mb-4'>{props.description}</div>
                 <div className='flex flex-row items-center'>
-                    <a href={props.href} className="flex flex-row hover:text-primary-500" rel="noopener noreferrer">
+                    <a href={props.href} target="_blank" className="flex flex-row hover:text-primary-500" rel="noopener noreferrer">
                         <div>
                             Read More
                         </div>
