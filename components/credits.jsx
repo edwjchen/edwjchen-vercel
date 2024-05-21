@@ -9,7 +9,7 @@ const Credits = (props) => {
                     Design inspired by <a href="https://brittanychiang.com" target="_blank" rel="noopener noreferrer" className="text-on-background transition-all hover:text-primary-500">Brittany Chiang</a>. 
                 </div>
                 <div className='flex flex-row justify-between'>
-                    <span>{props.data.name} | 2023</span>
+                    <span>{props.data.name} | 2024</span>
                 </div>
             </div>
         </div>
