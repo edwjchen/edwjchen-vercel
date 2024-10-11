@@ -10,9 +10,9 @@ function PublicationItem(props) {
         <div className="group flex flex-row mb-12 transition-all">
             <div>
                 <a href={props.href} target="_blank" rel="noopener noreferrer" className='font-medium transition-all hover:text-primary-500'>{props.title}</a>
+                <div className="text-surface-600"><small>{props.before_authors}<b className="text-primary-400">{props.author}</b>{props.after_authors}</small></div>
                 <div className='mb-2 text-primary-400'>{props.venue} | {props.year}</div>
                 <div className='text-surface-600 mb-4'>{props.description}</div>
-
                 <div className='flex flex-row items-center'>
                     <div className='flex flex-row'>
                         <a href={props.href} target="_blank" rel="noopener noreferrer" className="hover:text-primary-500">

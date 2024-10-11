@@ -18,7 +18,21 @@
     },
     "publications": [
         {
+            "title": "Cinnamon: A Framework for Scale-Out Encrypted AI",
+            "before_authors": "Siddharth Jayashankar, ",
+            "author": "Edward Chen",
+            "after_authors": ", Tom Tang, Wenting Zheng, Dimitrios Skarlatos",
+            "href": "",
+            "venue": "ASPLOS",
+            "year": "2025",
+            "github": "",
+            "description": ""
+        },
+        {
             "title": "Silph: A Framework for Scalable and Accurate Generation of Hybrid MPC Protocols",
+            "before_authors": "",
+            "author": "Edward Chen*",
+            "after_authors": ", Jinhao Zhu*, Alex Ozdemir, Riad S. Wahby, Fraser Brown, Wenting Zheng",
             "href": "https://eprint.iacr.org/2023/060.pdf",
             "venue": "IEEE Security and Privacy",
             "year": "2023",

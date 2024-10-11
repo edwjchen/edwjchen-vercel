@@ -9,6 +9,9 @@ const Publications = (props) => {
                 return <PublicationItem  
                     key={`${object.title}+${object.year}`}
                     title={object.title}
+                    before_authors={object.before_authors}
+                    author={object.author}
+                    after_authors={object.after_authors}
                     href={object.href}
                     venue={object.venue}
                     year={object.year}
