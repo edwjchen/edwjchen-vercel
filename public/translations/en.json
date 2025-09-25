@@ -25,7 +25,7 @@
             "href": "https://eprint.iacr.org/2025/1319.pdf",
             "venue": "In submission",
             "year": "2025",
-            "github": "",
+            "github": "https://github.com/cmu-cryptosystems/Rotom#",
             "description": "Homomorphic encryption (HE) offers strong privacy guarantees by enabling computation over encrypted data. However, the performance of tensor operations in HE is highly sensitive to how the plaintext data is packed into ciphertexts. Large tensor programs introduce numerous possible layout assignments, making it both challenging and tedious for users to manually write efficient HE programs. In this paper, we present Rotom, a compilation framework that auto-vectorizes tensor programs into optimized HE programs. Rotom systematically explores a wide range of layout assignments, applies state-of-the-art optimizations, and automatically finds an equivalent, efficient HE program."
         },
         {
