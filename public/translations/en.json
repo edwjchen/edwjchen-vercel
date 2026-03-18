@@ -18,13 +18,24 @@
     },
     "publications": [
         {
+            "title": "Orbit: Optimizing Rescale and Bootstrap Placement with Integer Linear Programming Techniques for Secure Inference",
+            "before_authors": "Zikai Zhou*, William Seo*, ",
+            "author": "Edward Chen",
+            "after_authors": ", Alex Ozdemir, Fraser Brown, Wenting Zheng",
+            "href": "https://eprint.iacr.org/2026/213",
+            "venue": "In submission",
+            "year": "2026",
+            "github": "https://github.com/cmu-cryptosystems/Orbit#",
+            "description": "Fully Homomorphic Encryption (FHE) compilers aim to make bootstrap placement and scale management efficient and easy by compiling high-level programs into low-level, optimized FHE computations. Unfortunately, existing approaches miss crucial optimization opportunities because they overlook a key property of CKKS programs: bootstrap and rescale placement are fundamentally coupled through the level budget. In this paper, we present Orbit, an FHE compiler that jointly optimizes bootstrap and rescale placement through a novel Integer Linear Programming (ILP) formulation that reasons about both ciphertext level and scale constraints. To make this formulation tractable for end-to-end programs, we introduce three techniques that reduce ILP complexity while preserving optimality."
+        },
+        {
             "title": "Bridging Usability and Performance: A Tensor Compiler for Autovectorizing Homomorphic Encryption",
             "before_authors": "",
             "author": "Edward Chen",
-            "after_authors": ", Wenting Zheng, Fraser Brown",
+            "after_authors": ", Fraser Brown, Wenting Zheng",
             "href": "https://eprint.iacr.org/2025/1319.pdf",
-            "venue": "In submission",
-            "year": "2025",
+            "venue": "Usenix Security",
+            "year": "2026",
             "github": "https://github.com/cmu-cryptosystems/Rotom#",
             "description": "Homomorphic encryption (HE) offers strong privacy guarantees by enabling computation over encrypted data. However, the performance of tensor operations in HE is highly sensitive to how the plaintext data is packed into ciphertexts. Large tensor programs introduce numerous possible layout assignments, making it both challenging and tedious for users to manually write efficient HE programs. In this paper, we present Rotom, a compilation framework that auto-vectorizes tensor programs into optimized HE programs. Rotom systematically explores a wide range of layout assignments, applies state-of-the-art optimizations, and automatically finds an equivalent, efficient HE program."
         },
@@ -54,7 +65,7 @@
     "blog": [
         {
             "title": "Climbing Mt. CSE 125",
-            "href": "http://edwjchen.github.io/climbing-mt-cse125/",
+            "href": "/blog/climbing-mt-cse125",
             "date": "Jan. 4, 2021",
             "description": "Reflecting on CSE 125, both as a student and as a TA, I have to admit that this has been by far my favorite course I have taken at UCSD. I enjoyed all of it: from blue skying new game designs and features with my fellow teammates to staying up late in the labs ordering McDonald's food delivery to remotely testing out games on the demo machines this past Spring."
         }

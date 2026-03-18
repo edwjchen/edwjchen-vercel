@@ -19,3 +19,53 @@
     padding-top: 64px;
   }
 }
+
+@layer components {
+  .blog-prose {
+    @apply font-body leading-relaxed text-[15px] md:text-base text-on-background;
+  }
+
+  .blog-prose header {
+    @apply mb-10;
+  }
+
+  .blog-prose h1 {
+    @apply text-3xl md:text-4xl mb-4;
+  }
+
+  .blog-prose h2 {
+    @apply text-2xl md:text-3xl mt-10 mb-4;
+  }
+
+  .blog-prose h3 {
+    @apply text-lg md:text-xl mt-6 mb-3;
+  }
+
+  .blog-prose p {
+    @apply mb-4;
+  }
+
+  .blog-prose ul {
+    @apply list-disc pl-5 mb-4 space-y-1;
+  }
+
+  .blog-prose a {
+    @apply text-primary-400 underline underline-offset-2 decoration-primary-400/60 hover:text-primary-500;
+  }
+
+  .blog-prose hr {
+    @apply my-10 border-t border-primary-400/30;
+  }
+
+  .blog-prose figure {
+    @apply my-6;
+  }
+
+  .blog-prose img {
+    @apply w-full rounded-lg border border-surface-600/40 shadow-md;
+  }
+
+  .blog-prose figcaption {
+    @apply mt-2 text-xs text-surface-600 text-center;
+  }
+}
