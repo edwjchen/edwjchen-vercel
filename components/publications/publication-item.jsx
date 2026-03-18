@@ -6,6 +6,11 @@ import {faGithub} from '@fortawesome/free-brands-svg-icons'
 
 
 function PublicationItem(props) {
+    const hasGithub =
+        typeof props.github === "string" &&
+        props.github.trim().length > 0 &&
+        props.github.trim() !== "#";
+
     return (
         <div className="group flex flex-row mb-12 transition-all">
             <div>
@@ -18,9 +23,11 @@ function PublicationItem(props) {
                         <a href={props.href} target="_blank" rel="noopener noreferrer" className="hover:text-primary-500">
                             <FontAwesomeIcon icon={faFileLines} width={28} height={28} className='object-contain object-top mr-3'/>
                         </a>
-                        <a href={props.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary-500">
-                            <FontAwesomeIcon icon={faGithub} width={28} height={28}/>
-                        </a>
+                        {hasGithub ? (
+                            <a href={props.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary-500">
+                                <FontAwesomeIcon icon={faGithub} width={28} height={28}/>
+                            </a>
+                        ) : null}
                     </div>
                 </div>
             </div> 

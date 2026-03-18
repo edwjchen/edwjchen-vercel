@@ -13,6 +13,7 @@ const Publications = (props) => {
                     author={object.author}
                     after_authors={object.after_authors}
                     href={object.href}
+                    github={object.github}
                     venue={object.venue}
                     year={object.year}
                     description={object.description}
