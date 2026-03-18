@@ -3,7 +3,7 @@ import BlogItem from "./blog-item";
 
 const Blog = (props) => {
     return (
-        <div data-section id='blog' className='mb-16'>
+        <div data-section id='blog' className='pt-16 mb-16'>
             <h2 className='mb-8 visible lg:invisible font-medium tracking-widest'></h2>
             {props.data.map(function(object, index){
                 return <BlogItem  
