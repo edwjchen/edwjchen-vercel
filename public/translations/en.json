@@ -26,7 +26,7 @@
             "venue": "In submission",
             "year": "2026",
             "github": "https://github.com/cmu-cryptosystems/Orbit#",
-            "description": "Fully Homomorphic Encryption (FHE) compilers aim to make bootstrap placement and scale management efficient and easy by compiling high-level programs into low-level, optimized FHE computations. Unfortunately, existing approaches miss crucial optimization opportunities because they overlook a key property of CKKS programs: bootstrap and rescale placement are fundamentally coupled through the level budget. In this paper, we present Orbit, an FHE compiler that jointly optimizes bootstrap and rescale placement through a novel Integer Linear Programming (ILP) formulation that reasons about both ciphertext level and scale constraints. To make this formulation tractable for end-to-end programs, we introduce three techniques that reduce ILP complexity while preserving optimality."
+            "description": "Fully Homomorphic Encryption (FHE) compilers aim to make bootstrap placement and scale management efficient and easy. Unfortunately, existing approaches miss crucial optimization opportunities because they overlook a key property of CKKS programs: bootstrap and rescale placement are fundamentally coupled through the level budget. In this paper, we present Orbit, an FHE compiler that jointly optimizes bootstrap and rescale placement through a novel Integer Linear Programming (ILP) formulation. To make this formulation tractable, we introduce three techniques that reduce ILP complexity while preserving optimality."
         },
         {
             "title": "Bridging Usability and Performance: A Tensor Compiler for Autovectorizing Homomorphic Encryption",
