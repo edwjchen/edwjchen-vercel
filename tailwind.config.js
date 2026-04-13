@@ -10,12 +10,10 @@ module.exports = {
             transparent: "transparent",
             current: "currentColor",
             primary: {
-                // 100: "#ff6b35",
-                // 200: "#ff7d4b",
-                300: "#e1e7f0",
-                400: "#66b2b2",
-                500: "#66b2b2",
-                // 600: "#ffc0a3",
+                200: "#9eb5d4",
+                300: "#dce6f5",
+                400: "#5b8fd4",
+                500: "#73a6f0",
             },
             surface: {
                 100: "#272833",
