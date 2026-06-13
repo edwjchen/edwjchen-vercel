@@ -44,6 +44,8 @@ function TodoAppContent() {
           <p className="app__subtitle">{theme.subtitle}</p>
         </header>
 
+        <PomodoroTimer />
+
         <section className="app__card">
           <TodoInput onAdd={addTodo} />
 
@@ -74,8 +76,6 @@ function TodoAppContent() {
             />
           )}
         </section>
-
-        <PomodoroTimer />
 
         <footer className="app__footer">
           <p>Drag to reorder · Double-click a task to edit</p>
