@@ -1,10 +1,10 @@
-.mountain-backdrop {
+.backdrop {
   position: fixed;
   inset: 0;
   z-index: -1; /* behind all app content, above the page gradient */
   pointer-events: none;
 
-  background-image: url('/backdrop.jpg');
+  /* background-image is set inline from the active theme. */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -26,9 +26,9 @@
   );
 }
 
-/* Let the same image read a touch stronger against the dark page. */
+/* Let the image read a touch stronger against the dark page. */
 @media (prefers-color-scheme: dark) {
-  .mountain-backdrop {
+  .backdrop {
     opacity: 0.4;
   }
 }

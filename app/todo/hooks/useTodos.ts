@@ -51,11 +51,24 @@ export function useTodos(): UseTodos {
 
   const toggleTodo = useCallback(
     (id: string) => {
-      setTodos((prev) =>
-        prev.map((todo) =>
-          todo.id === id ? { ...todo, completed: !todo.completed } : todo,
-        ),
-      )
+      setTodos((prev) => {
+        const target = prev.find((todo) => todo.id === id)
+        if (!target) return prev
+        const updated = { ...target, completed: !target.completed }
+        const rest = prev.filter((todo) => todo.id !== id)
+        if (updated.completed) {
+          // Completing a task drops it to the bottom of the list.
+          return [...rest, updated]
+        }
+        // Un-completing lifts it back up to just below the last still-active
+        // task (i.e. above the completed cluster that sits at the bottom).
+        const lastActive = rest.reduce(
+          (last, todo, i) => (todo.completed ? last : i),
+          -1,
+        )
+        const insertAt = lastActive + 1
+        return [...rest.slice(0, insertAt), updated, ...rest.slice(insertAt)]
+      })
     },
     [setTodos],
   )

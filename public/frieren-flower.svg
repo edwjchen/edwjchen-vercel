@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Blue-Moon Weed flower">
+  <defs>
+    <radialGradient id="petal" cx="50%" cy="82%" r="80%">
+      <stop offset="0%" stop-color="#dce7fb"/>
+      <stop offset="45%" stop-color="#7c9fe6"/>
+      <stop offset="100%" stop-color="#3f63c4"/>
+    </radialGradient>
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fdf6dc"/>
+      <stop offset="65%" stop-color="#eef3ff"/>
+      <stop offset="100%" stop-color="#cdd9f5"/>
+    </radialGradient>
+  </defs>
+  <!-- Five bowl-shaped petals radiating from the center (one every 72°). -->
+  <g fill="url(#petal)" stroke="#3f63c4" stroke-opacity="0.12" stroke-width="0.6">
+    <ellipse cx="32" cy="16" rx="10" ry="14"/>
+    <ellipse cx="32" cy="16" rx="10" ry="14" transform="rotate(72 32 32)"/>
+    <ellipse cx="32" cy="16" rx="10" ry="14" transform="rotate(144 32 32)"/>
+    <ellipse cx="32" cy="16" rx="10" ry="14" transform="rotate(216 32 32)"/>
+    <ellipse cx="32" cy="16" rx="10" ry="14" transform="rotate(288 32 32)"/>
+  </g>
+  <!-- Pale, faintly golden center. -->
+  <circle cx="32" cy="32" r="6" fill="url(#core)"/>
+</svg>

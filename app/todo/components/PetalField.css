@@ -40,6 +40,20 @@
   animation: petal-flutter var(--petal-duration, 6s) ease-in-out forwards;
 }
 
+/* Frieren: the same petal shape, recolored to the cool cornflower blue of the
+   Blue-Moon Weed (Himmel's favorite flower). Only the paint changes — the
+   drift/flutter mechanics above are shared across themes. */
+.todo-page[data-theme='frieren'] .petal__inner {
+  background: radial-gradient(
+    125% 125% at 30% 18%,
+    #e2ecfc 0%,
+    #8fb0ee 45%,
+    #4f7cd1 100%
+  );
+  filter: hue-rotate(var(--petal-hue, 0deg))
+    drop-shadow(0 1px 1.5px rgba(40, 70, 150, 0.22));
+}
+
 /* A swaying descent — translateY climbs through fractions of the total fall
    distance while translateX oscillates left/right for the drift. */
 @keyframes petal-fall {

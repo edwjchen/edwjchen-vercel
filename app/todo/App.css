@@ -9,7 +9,37 @@
 
 /* Header */
 .app__header {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+}
+
+/* Theme picker — its own right-aligned row above the title, so it never
+   collides with the (centered) heading at any width. */
+.theme-switcher {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.theme-switcher__select {
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: var(--text);
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.theme-switcher__select:hover {
+  border-color: var(--accent);
 }
 
 .app__title {
@@ -275,6 +305,16 @@
   background: var(--surface-muted);
   border: 1px solid var(--border);
   border-radius: 999px;
+}
+
+/* Themes with no traveler heads (only a small marker) don't need the reserved
+   space above the bar — collapse it so the card isn't oddly tall. */
+.pomodoro--compact {
+  margin-top: 0;
+}
+
+.pomodoro--compact .pomodoro__bar {
+  margin-top: 0.25rem;
 }
 
 .pomodoro__fill {

@@ -66,6 +66,51 @@
   }
 }
 
+/* ─────────────────────────────────────────────────────────────────────────
+   Frieren theme — "Blue-Moon Weed at dawn"
+   A warm golden-dawn sky over cool cornflower-blue flowers (Himmel's favorite),
+   drawn from the backdrop art. Selected when the .todo-page wrapper carries
+   data-theme="frieren"; the higher-specificity selector wins over the default
+   Mount Hua tokens above without affecting anything outside .todo-page.
+   ───────────────────────────────────────────────────────────────────────── */
+.todo-page[data-theme='frieren'] {
+  /* Light — golden sky fading into a cool blue meadow */
+  --bg: #f4f0e6;
+  --bg-gradient-a: #fcf4e1; /* warm golden cream (sky) */
+  --bg-gradient-b: #e9eef8; /* cool pale blue (flowers) */
+  --surface: #ffffff;
+  --surface-muted: #f3f6fd;
+  --border: #e2e7f2;
+  --text: #29303d;
+  --text-muted: #7a8298;
+  --accent: #4f7cd1; /* cornflower / Blue-Moon Weed blue */
+  --accent-hover: #3c66b9;
+  --accent-2: #8a78d8; /* periwinkle-violet (gradient companion) */
+  --accent-contrast: #ffffff;
+  --danger: #c92a2a;
+  --shadow: 0 12px 34px rgba(50, 80, 150, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  .todo-page[data-theme='frieren'] {
+    /* Dark — a twilight journey under a starry meadow */
+    --bg: #0e1320;
+    --bg-gradient-a: #161d31;
+    --bg-gradient-b: #0a0e19;
+    --surface: #182031;
+    --surface-muted: #212a40;
+    --border: #2e3a56;
+    --text: #eaf0fb;
+    --text-muted: #9aa6c0;
+    --accent: #7fa0ee; /* luminous cornflower */
+    --accent-hover: #9eb9f6;
+    --accent-2: #b49cf0; /* soft violet */
+    --accent-contrast: #0c1119;
+    --danger: #f1707b;
+    --shadow: 0 12px 34px rgba(0, 0, 0, 0.55);
+  }
+}
+
 .todo-page * {
   box-sizing: border-box;
 }

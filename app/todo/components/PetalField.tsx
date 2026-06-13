@@ -25,11 +25,13 @@ function randomBetween(min: number, max: number): number {
 }
 
 /**
- * A purely decorative overlay. As the pointer moves, plum blossom petals are
- * shed at the cursor; completing a task triggers a small celebratory burst
- * (see {@link emitPetalBurst}). Petals drift gracefully to the bottom of the
- * page. The layer ignores pointer events and is hidden from assistive tech, so
- * it never interferes with the todo UI. Honors prefers-reduced-motion.
+ * A purely decorative overlay. As the pointer moves, petals are shed at the
+ * cursor in the active theme's color (rose-pink plum blossom for Mount Hua,
+ * cornflower blue for Frieren — see the `[data-theme]` rules in
+ * PetalField.css); completing a task triggers a small celebratory burst (see
+ * {@link emitPetalBurst}). Petals drift gracefully to the bottom of the page.
+ * The layer ignores pointer events and is hidden from assistive tech, so it
+ * never interferes with the todo UI. Honors prefers-reduced-motion.
  */
 export function PetalField() {
   const [petals, setPetals] = useState<Petal[]>([])

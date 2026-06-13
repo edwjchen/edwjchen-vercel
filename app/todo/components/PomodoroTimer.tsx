@@ -1,20 +1,7 @@
 import { useRef } from 'react'
 import { usePomodoro } from '../hooks/usePomodoro'
+import { useTheme } from '../themes/context'
 import { emitPetalBurst } from './petalBurst'
-
-/**
- * Mount Hua member icons in journey order (start → summit). The traveler slides
- * across the bar and SWAPS to the next member as it passes each milestone, so
- * the party progresses member-by-member. Drop transparent images in `public/`
- * and list them here; swaps activate automatically based on the count.
- */
-const MEMBER_ICONS = [
-  '/timer/1.webp',
-  '/timer/2.webp',
-  '/timer/3.webp',
-  '/timer/4.webp',
-  '/timer/5.webp',
-]
 
 function formatTime(totalSeconds: number): string {
   const minutes = Math.floor(totalSeconds / 60)
@@ -50,6 +37,13 @@ function playChime() {
 
 export function PomodoroTimer() {
   const barRef = useRef<HTMLDivElement>(null)
+  const { theme } = useTheme()
+  // Traveler icons in journey order (start → finish). The marker slides across
+  // the bar and SWAPS to the next icon as it passes each 1/N milestone, so a
+  // party progresses member-by-member. A theme may provide none, in which case
+  // only the marker travels (the bar renders in a compact, head-free layout).
+  const { icons, marker } = theme.timer
+  const hasHeads = icons.length > 0
 
   const { timeLeft, duration, isRunning, toggle, reset } = usePomodoro(() => {
     // Celebrate a completed session with a petal burst + chime.
@@ -65,13 +59,15 @@ export function PomodoroTimer() {
   const pct = `${(progress * 100).toFixed(2)}%`
 
   // Which member is currently traveling — swaps at each 1/N milestone.
-  const travelerIndex = Math.min(
-    MEMBER_ICONS.length - 1,
-    Math.floor(progress * MEMBER_ICONS.length),
-  )
+  const travelerIndex = hasHeads
+    ? Math.min(icons.length - 1, Math.floor(progress * icons.length))
+    : -1
 
   return (
-    <section className="app__card pomodoro" aria-label="Session timer">
+    <section
+      className={`app__card pomodoro${hasHeads ? '' : ' pomodoro--compact'}`}
+      aria-label="Session timer"
+    >
       <div
         className="pomodoro__bar"
         ref={barRef}
@@ -84,7 +80,7 @@ export function PomodoroTimer() {
         {/* All member heads are mounted (so they're preloaded) and stacked at
             the same spot; only the current one is shown. This avoids a reload
             flicker when swapping members at each milestone. */}
-        {MEMBER_ICONS.map((src, i) => (
+        {icons.map((src, i) => (
           <img
             key={src}
             className="pomodoro__head"
@@ -96,7 +92,7 @@ export function PomodoroTimer() {
         <img
           className="pomodoro__flower"
           style={{ left: pct }}
-          src="/Mount_Hua_Sect_Symbol.webp"
+          src={marker}
           alt=""
         />
       </div>

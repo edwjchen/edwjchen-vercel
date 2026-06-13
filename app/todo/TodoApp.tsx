@@ -1,16 +1,20 @@
 'use client'
 
-import { MountainBackdrop } from './components/MountainBackdrop'
+import { Backdrop } from './components/Backdrop'
 import { PetalField } from './components/PetalField'
 import { PomodoroTimer } from './components/PomodoroTimer'
+import { ThemeSwitcher } from './components/ThemeSwitcher'
 import { TodoFooter } from './components/TodoFooter'
 import { TodoInput } from './components/TodoInput'
 import { TodoList } from './components/TodoList'
 import { useTodos } from './hooks/useTodos'
+import { useTheme } from './themes/context'
+import { ThemeProvider } from './themes/ThemeProvider'
 import './todo-base.css'
 import './App.css'
 
-export default function TodoApp() {
+function TodoAppContent() {
+  const { theme } = useTheme()
   const {
     todos,
     remaining,
@@ -26,14 +30,18 @@ export default function TodoApp() {
 
   const allComplete = todos.length > 0 && remaining === 0
 
+  // `data-theme` selects the active palette; the Frieren tokens in todo-base.css
+  // are keyed off `.todo-page[data-theme='frieren']`, so the rest of the
+  // portfolio is never affected.
   return (
-    <div className="todo-page">
-      <MountainBackdrop />
+    <div className="todo-page" data-theme={theme.id}>
+      <Backdrop />
       <PetalField />
       <main className="app">
         <header className="app__header">
-          <h1 className="app__title">Climbing Mount Hua</h1>
-          <p className="app__subtitle">Get to work, you little shi-.</p>
+          <ThemeSwitcher />
+          <h1 className="app__title">{theme.title}</h1>
+          <p className="app__subtitle">{theme.subtitle}</p>
         </header>
 
         <section className="app__card">
@@ -51,7 +59,7 @@ export default function TodoApp() {
 
           <TodoList
             todos={todos}
-            emptyMessage="Nothing here yet — add your first task above."
+            emptyMessage={theme.emptyMessage}
             onToggle={toggleTodo}
             onEdit={editTodo}
             onRemove={removeTodo}
@@ -74,5 +82,13 @@ export default function TodoApp() {
         </footer>
       </main>
     </div>
+  )
+}
+
+export default function TodoApp() {
+  return (
+    <ThemeProvider>
+      <TodoAppContent />
+    </ThemeProvider>
   )
 }
