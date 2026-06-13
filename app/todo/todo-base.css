@@ -1,0 +1,81 @@
+/*
+ * Base styles for the /todo route, scoped to .todo-page so none of it (theme
+ * tokens, resets, body background, button defaults) leaks into the rest of the
+ * portfolio. The page gradient lives on a fixed ::before layer behind the
+ * Mountain backdrop image (which is fixed at z-index -1).
+ */
+.todo-page {
+  /* Light theme (default) — "rice paper & plum blossom" */
+  --bg: #f8f1f4;
+  --bg-gradient-a: #fdeef3;
+  --bg-gradient-b: #f3e2ea;
+  --surface: #ffffff;
+  --surface-muted: #fdf4f8;
+  --border: #f1dde6;
+  --text: #2a1a22;
+  --text-muted: #8c6b78;
+  --accent: #d6336c; /* plum blossom rose-magenta */
+  --accent-hover: #b21e54;
+  --accent-2: #a61e2e; /* deep crimson (gradient companion) */
+  --accent-contrast: #ffffff;
+  --danger: #c92a2a;
+  --shadow: 0 12px 34px rgba(120, 20, 60, 0.12);
+
+  position: relative;
+  min-height: 100vh;
+  /* Decorative overhang (traveling head) shouldn't create horizontal scroll. */
+  overflow-x: clip;
+  color: var(--text);
+  color-scheme: light dark;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.todo-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    160deg,
+    var(--bg-gradient-a) 0%,
+    var(--bg-gradient-b) 100%
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  .todo-page {
+    /* Dark theme — "glowing plum petals on ink" */
+    --bg: #140f16;
+    --bg-gradient-a: #1d1421;
+    --bg-gradient-b: #0e0a12;
+    --surface: #1f1824;
+    --surface-muted: #2a2031;
+    --border: #3a2b41;
+    --text: #f2e7ee;
+    --text-muted: #b29aa8;
+    --accent: #f56a9b; /* luminous plum blossom pink */
+    --accent-hover: #ff89b3;
+    --accent-2: #d6336c; /* rose-magenta (gradient companion) */
+    --accent-contrast: #1a1014;
+    --danger: #f1707b;
+    --shadow: 0 12px 34px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.todo-page * {
+  box-sizing: border-box;
+}
+
+.todo-page button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.todo-page :is(button, input, select):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
