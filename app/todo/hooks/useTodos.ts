@@ -43,8 +43,8 @@ export function useTodos(): UseTodos {
         completed: false,
         createdAt: Date.now(),
       }
-      // Append to the end; manual ordering is preserved thereafter.
-      setTodos((prev) => [...prev, todo])
+      // Prepend to the top; manual ordering is preserved thereafter.
+      setTodos((prev) => [todo, ...prev])
     },
     [setTodos],
   )
