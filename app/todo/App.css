@@ -414,7 +414,9 @@
 /* Mobile / small screens */
 @media (max-width: 600px) {
   .app {
-    padding: 1.5rem 0.85rem 2.5rem;
+    /* Keep a comfortable side gutter on phones — don't shrink it below the
+       desktop margin, or the cards feel cramped against the screen edges. */
+    padding: 1.5rem 1.15rem 2.5rem;
     gap: 1.1rem;
   }
 
