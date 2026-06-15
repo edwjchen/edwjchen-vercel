@@ -23,7 +23,7 @@
             "author": "Edward Chen",
             "after_authors": ", Alex Ozdemir, Fraser Brown, Wenting Zheng",
             "href": "https://eprint.iacr.org/2026/213",
-            "venue": "In submission",
+            "venue": "Usenix Security",
             "year": "2026",
             "description": "Fully Homomorphic Encryption (FHE) compilers aim to make bootstrap placement and scale management efficient and easy. Unfortunately, existing approaches miss crucial optimization opportunities because they overlook a key property of CKKS programs: bootstrap and rescale placement are fundamentally coupled through the level budget. In this paper, we present Orbit, an FHE compiler that jointly optimizes bootstrap and rescale placement through a novel Integer Linear Programming (ILP) formulation. To make this formulation tractable, we introduce three techniques that reduce ILP complexity while preserving optimality."
         },
